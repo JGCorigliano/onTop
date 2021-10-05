@@ -1,0 +1,60 @@
+<div class="row row animated fadeIn">
+    <div class="col-sm-6 my-2" *ngFor="let persona of personas">
+        <div class="card boxShadowPanel">
+            <div class="card-body">
+                <div class="d-flex">
+                    <div class="col-10 d-flex">
+                        <img [src]="persona.img" class="img-thumbnail mr-1" [alt]="persona.name">
+                        <h5 class="card-title my-auto">{{ persona.name }}</h5>
+                    </div>
+
+                    <div class="dropdown dropleft col-2">
+                        <button class="btn btn-transparent" type="button" id="dropdownMenutarjeta" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-ellipsis-v onTopColor"></i>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenutarjeta">
+                            <button class="dropdown-item" type="button"> <i class="far fa-edit"></i> Edit</button>
+                            <button class="dropdown-item" type="button"> <i class="fas fa-signature"></i> Sign</button>
+                            <button class="dropdown-item" type="button"> <i class="fas fa-file-alt"></i> View summary</button>
+                            <div class="dropdown-divider"></div>
+                            <button class="dropdown-item" type="button" data-toggle="modal" data-target="#eliminateModal"> <i class="far fa-trash-alt onTopColor"></i> Delete</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown-divider"></div>
+                
+                <div class="row py-2 ">
+                    <div class="mx-auto d-flex">
+                        <div class="col-md-4 text-center ">
+                            <span class="h6">Type</span>
+                            <br>
+                            <i class="fas fa-archive onTopColor" title="Type"></i>
+                            <br>
+                            <p class="my-auto ">{{ persona.type }}</p>
+                        </div>
+                        <div class="col-md-4 text-center ">
+                            <span class="h6">Date</span>
+                            <br>
+                            <i class="fas fa-calendar-alt onTopColor" title="Start date"></i>
+                            <br>
+                            <p class="my-auto ">{{ persona.date | date:"y" }}</p>
+                        </div>
+                        <div class="col-md-4 text-center ">
+                            <span class="h6">Amount</span>
+                            <br>
+                            <i class="fas fa-dollar-sign onTopColor" title="Amount"></i>
+                            <br>
+                            <p class="my-auto ">{{ persona.amount }}</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="card-footer"
+                [class.pendingFooter]="persona.status != 'Active'" 
+                [class.activeFooter]="persona.status == 'Active'">
+                {{ persona.status }}
+            </div>
+        </div>
+    </div>
+</div>

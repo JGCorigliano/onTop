@@ -1,0 +1,7 @@
+.btn.focus, .btn:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #dc354526 !important;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem #dc354587 !important;
+}

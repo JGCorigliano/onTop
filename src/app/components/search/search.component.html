@@ -1,0 +1,43 @@
+<div class="row my-2">
+    <div class="col-10 d-flex justify-content-start">
+        <button class="btn btn-secondary my-sm-0 btn-sm" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            <i class="fas fa-sliders-h"></i>
+        </button>
+        <input class=" col-lg-10 col-sm-12 form-control" type="search" placeholder="Search" aria-label="Search" (keyup.enter)="buscarPersona(buscarTexto.value)" #buscarTexto>
+        <div class="d-flex">
+            <button class="btn btn-danger ml-1 onTopBG my-sm-0" title="New hire"> <i class="fas fa-plus-circle"></i> </button>
+        </div>
+    </div>
+    <div class="col-12 ">
+        <div class="collapse mt-4 " id="collapseExample">
+            <div class="">
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-3 col-sm-7 mx-auto">
+                            <input type="text" class="form-control form-control-sm" id="contractorName" placeholder="Contractor name">
+                        </div>
+                        <div class="form-group col-md-2 col-sm-7 mx-auto">
+                            <select class="form-control form-control-sm">
+                                <option>Type</option>
+                                <option value="Tradutional">Traditional</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-2 col-sm-7 mx-auto">
+                            <input type="date" class="form-control form-control-sm" id="createON" placeholder="Create on:">
+                        </div>
+                        <div class="form-group col-md-2 col-sm-7 mx-auto">
+                            <select class="form-control form-control-sm">
+                                <option>Status</option>
+                                <option value="Active">Active</option>
+                                <option value="Pending">Pending</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2 col-sm-7 mx-auto">
+                            <div class="text-danger mx-auto pt-1 h6 manito"><i class="far fa-trash-alt"></i>Clear filter</div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

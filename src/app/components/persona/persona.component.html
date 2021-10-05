@@ -1,0 +1,43 @@
+<div class="col">
+    <table class="table table-borderless table-striped">
+        <thead>
+            <tr>
+                <th scope="col-4">Contractor name</th>
+                <th scope="col-2">Type</th>
+                <th scope="col-2">Start date</th>
+                <th scope="col-2">Amount</th>
+                <th scope="col-2">Status</th>
+                <th scope="">Actions</th>
+            </tr>
+        </thead>
+        <tbody class="rounded-pill">
+            <tr *ngFor="let persona of personas">
+                <td class="col media my-auto"><img [src]="persona.img" class="img-thumbnail mr-1" [alt]="persona.name"> <span class=" my-auto h6"> {{ persona.name }}</span></td>
+                <td class="col-2 pt-3"><span class=" my-auto ">{{ persona.type }}</span></td>
+                <td class="col-2 pt-3"><span class=" my-auto">{{ persona.date | date:"mediumDate" }}</span></td>
+                <td class="col-2 pt-3"><span class=" my-auto">{{ persona.amount }}</span></td>
+                <td class="col-2 pt-3">
+                    <span class="badge badge-pill"
+                        [class.pendingFooter]="persona.status != 'Active'" 
+                        [class.activeFooter]="persona.status == 'Active'"> 
+                        {{ persona.status }}
+                    </span>
+                </td>
+                <td class="">
+                    <div class="dropdown dropleft">
+                        <button class="btn btn-transparent" type="button" id="dropdownMenutarjeta" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-ellipsis-v onTopColor"></i>
+                        </button>
+                        <div class="dropdown-menu " aria-labelledby="dropdownMenutarjeta">
+                            <button class="dropdown-item" type="button"> <i class="far fa-edit"></i> Edit</button>
+                            <button class="dropdown-item" type="button"> <i class="fas fa-signature"></i> Sign</button>
+                            <button class="dropdown-item" type="button"> <i class="fas fa-file-alt"></i> View summary</button>
+                            <div class="dropdown-divider"></div>
+                            <button class="dropdown-item" type="button" data-toggle="modal" data-target="#eliminateModal"> <i class="far fa-trash-alt onTopColor"></i> Delete</button>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,15 @@
+<div (window:resize)="eesMobile()">
+
+    <div class="row animated fadeIn" *ngIf=!dispositivoMobile>
+        <div class="col-12 mt-4">
+            <div class="jumbotron jumbotron-fluid boxShadowPanel rounded bg-white">
+                <app-persona></app-persona>
+            </div>
+        </div>
+    </div>
+    
+    <ng-container *ngIf=dispositivoMobile>
+        <app-card></app-card>
+    </ng-container>
+
+</div>
